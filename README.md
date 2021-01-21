@@ -1,5 +1,5 @@
 # CIXframe
- CIXframe is a custom futuristic Java frame layout, which I built as a template for future projects. It aim's to combine fusturistic UI design and practicability, if you have any tipps and tricks feel free to contact me.
+ CIXframe is a custom futuristic Java frame layout, which I built as a template for future projects. It aim's to combine fusturistic UI design and practicability, if you have any tipps and tricks feel free to contact me. The most current version can be found [here](/CIXframe/cix_v0.6.jar).
  
 ## Design
  The frame comes with four colors - grey, red, green and blue - which you can change by clicking on the 'C' on the top right of the frame. The 'I' button iconifies the app and the  red 'X' closes it. By grabbing the frame at the upper part of the frame's header you can drag it around your screen. Diffrent from the default undecorated Java frame, this one has smooth fade in and fade out animations.

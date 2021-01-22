@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class myFrameControls extends JPanel{
@@ -33,14 +34,6 @@ public class myFrameControls extends JPanel{
 		// No Color Change on Buttons
 		UIManager.put("Button.select", new Color(0,0,0,0));
 		
-		// Window Title
-		lbl_title = new JLabel(title);
-		lbl_title.setPreferredSize(new Dimension((screensize.width-200)/2, 30));
-		lbl_title.setBackground(new Color(0,0,0,0));
-		lbl_title.setForeground(Color.WHITE);
-		lbl_title.setOpaque(false);
-		lbl_title.setVisible(true);
-		
 		// Exit Button
 		bt_exit = new JButton("X");
 		bt_exit.setBorderPainted(false);
@@ -67,6 +60,14 @@ public class myFrameControls extends JPanel{
 		bt_color.setOpaque(false);
 		bt_color.setBackground(new Color(0,0,0,0));
 		bt_color.setVisible(true);
+		
+		// Window Title
+		lbl_title = new JLabel(title, SwingConstants.CENTER);
+		lbl_title.setPreferredSize(new Dimension(screensize.width-275, 30));
+		lbl_title.setBackground(new Color(0,0,0,0));
+		lbl_title.setForeground(Color.WHITE);
+		lbl_title.setOpaque(false);
+		lbl_title.setVisible(true);
 		
 		// Final
 		super.add(lbl_title);

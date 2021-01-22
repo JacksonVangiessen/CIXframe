@@ -40,7 +40,7 @@ public class myFrame extends JFrame{
 		
 		// Load GUI
 		myPanel panel = new myPanel(d);
-		panel.frameControls.setTitle("New Title");
+		panel.frameControls.setTitle("CIX 0.8");
 		
 		// Drag 'M' to move Frame
 		panel.frameControls.addMouseListener(new MouseAdapter(){
@@ -82,40 +82,36 @@ public class myFrame extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(panel.bg_color.equals(new Color(50,50,50,200)) || panel.bg_color.equals(new Color(50,50,50))) {
-					// Red
-					if(!System.getProperty("os.name").equals("Windows 10")) {
-						FadeUtilityClass.fade(myFrame.this, true, false, false);
-						panel.bg_color = new Color(75,50,50);
-					}else {
-						panel.bg_color = new Color(75,50,50,200);
-					}
-					panel.repaint();
-				}else if(panel.bg_color.equals(new Color(75,50,50,200)) || panel.bg_color.equals(new Color(75,50,50))) {
-					// Green
-					if(!System.getProperty("os.name").equals("Windows 10")) {
-						FadeUtilityClass.fade(myFrame.this, true, false, false);
-						panel.bg_color = new Color(50,75,50);
-					}else {
-						panel.bg_color = new Color(50,75,50,200);
-					}
-					panel.repaint();
-				}else if(panel.bg_color.equals(new Color(50,75,50,200)) || panel.bg_color.equals(new Color(50,75,50))) {
+				if(panel.bg_color.equals(panel.greyT) || panel.bg_color.equals(panel.greyS)) {
 					// Blue
 					if(!System.getProperty("os.name").equals("Windows 10")) {
-						FadeUtilityClass.fade(myFrame.this, true, false, false);
-						panel.bg_color = new Color(50,50,75);
+						panel.bg_color = panel.blueS;
 					}else {
-						panel.bg_color = new Color(50,50,75,200);
+						panel.bg_color = panel.blueT;
+					}
+					panel.repaint();
+				}else if(panel.bg_color.equals(panel.blueT) || panel.bg_color.equals(panel.blueS)) {
+					// Red
+					if(!System.getProperty("os.name").equals("Windows 10")) {
+						panel.bg_color = panel.redS;
+					}else {
+						panel.bg_color = panel.redT;
+					}
+					panel.repaint();
+				}else if(panel.bg_color.equals(panel.redT) || panel.bg_color.equals(panel.redS)){
+					// Purple
+					if(!System.getProperty("os.name").equals("Windows 10")) {
+						panel.bg_color = panel.purpleS;
+					}else {
+						panel.bg_color = panel.purpleT;
 					}
 					panel.repaint();
 				}else {
 					// Grey
 					if(!System.getProperty("os.name").equals("Windows 10")) {
-						FadeUtilityClass.fade(myFrame.this, true, false, false);
-						panel.bg_color = new Color(50,50,50);
+						panel.bg_color = panel.greyS;
 					}else {
-						panel.bg_color = new Color(50,50,50,200);
+						panel.bg_color = panel.greyT;
 					}
 					panel.repaint();
 				}

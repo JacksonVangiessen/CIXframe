@@ -18,12 +18,22 @@ public class myPanel extends JPanel{
 	protected myContentPane contentPane;
 	protected JButton bt_move, bt_fullscreen, bt_exit, bt_iconify;
 	protected Color bg_color;
-	
-    protected String title;
-    protected int corners = 30,
+    
+	 protected String title;
+	 protected int corners = 30,
     		margin = 5,
-    		thickness = 2,
+    		thickness = 1,
     		frameControlsHeight = 35;
+	    
+    protected int transparency = 180;
+    protected Color greyT = new Color(40,40,40,transparency),
+    		redT = new Color(80,40,40,transparency),
+    		blueT= new Color(40,40,80,transparency),
+    		purpleT = new Color(80,40,80,transparency);
+    protected Color greyS = new Color(greyT.getRGB()),
+    		redS = new Color(redT.getRGB()),
+    		blueS = new Color(blueT.getRGB()),
+    		purpleS = new Color(purpleT.getRGB()); // colors without transparency
 	
 	protected myPanel(Dimension screensize) {
 		// Load Panel
@@ -38,9 +48,9 @@ public class myPanel extends JPanel{
 		
 		// Linux disable Transparency
 		if(!System.getProperty("os.name").equals("Windows 10")) {
-			bg_color = new Color(50,50,50);
+			bg_color = greyS;
 		} else {
-			bg_color = new Color(50,50,50,200);
+			bg_color = greyT;
 		}
 
 		// No Color Change on Buttons
@@ -75,8 +85,8 @@ public class myPanel extends JPanel{
         		margin};
         g2.setColor(bg_color);
         g2.fillPolygon(xPoly, yPoly, xPoly.length);
-        g2.setStroke(new BasicStroke(thickness));
         g2.setColor(new Color(255,255,255,20));
+        g2.setStroke(new BasicStroke(thickness));
         g2.drawPolygon(xPoly, yPoly, xPoly.length);
     };
 	

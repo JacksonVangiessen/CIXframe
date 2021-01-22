@@ -21,8 +21,8 @@ public class myContentPane extends JPanel{
 		this.corners = corners;
 		this.frameControlsHeight = frameControlsHeight;
 		super.setBackground(new Color(0,0,0,0));
-		super.setPreferredSize(new Dimension(screensize.width-margin, screensize.height-2*margin-frameControlsHeight));
-		setScreensize(new Dimension(screensize.width, screensize.height-2*margin-frameControlsHeight));
+		super.setPreferredSize(new Dimension(screensize.width-margin, screensize.height-frameControlsHeight));
+		setScreensize(new Dimension(screensize.width, screensize.height-frameControlsHeight));
 		super.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
 		// No Color Change on Buttons
@@ -43,10 +43,10 @@ public class myContentPane extends JPanel{
         int xPoly[] = {screensize.width-margin, screensize.width-margin,
         		screensize.width-margin-corners, margin+corners, margin,
         		margin, margin+corners};
-        int yPoly[] = {margin, screensize.height-margin-corners,
+        int yPoly[] = {0, screensize.height-corners-margin,
         		screensize.height-margin, screensize.height-margin,
-        		screensize.height-margin-corners, margin+corners,
-        		margin};
+        		screensize.height-corners-margin,corners,
+        		0};
         g2.setColor(new Color(0,0,0,200));
         g2.fillPolygon(xPoly, yPoly, xPoly.length);
     };

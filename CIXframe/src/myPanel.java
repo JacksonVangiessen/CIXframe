@@ -19,17 +19,22 @@ public class myPanel extends JPanel{
 	protected JButton bt_move, bt_fullscreen, bt_exit, bt_iconify;
 	protected Color bg_color;
 	
+    protected String title = "New Frame";
     protected int corners = 30,
     		margin = 5,
     		thickness = 2,
-    		frameControlsHeight = 25;
+    		frameControlsHeight = 35;
 	
 	protected myPanel(Dimension screensize) {
 		// Load Panel
 		this.screensize = screensize;
 		super.setPreferredSize(screensize);
 		super.setBackground(new Color(0,0,0,0));
-		super.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		
+		// Set Layout
+		FlowLayout fl = new FlowLayout(FlowLayout.RIGHT);
+		fl.setVgap(0);
+		super.setLayout(fl);
 		
 		// Linux disable Transparency
 		if(!System.getProperty("os.name").equals("Windows 10")) {
@@ -42,7 +47,7 @@ public class myPanel extends JPanel{
 		UIManager.put("Button.select", new Color(0,0,0,0));
 		
 		// Load Frame Controls
-		frameControls = new myFrameControls(screensize, frameControlsHeight);
+		frameControls = new myFrameControls(title, screensize, frameControlsHeight);
 		
 		// Load Contnent Pane
 		contentPane = new myContentPane(screensize, margin, corners, frameControlsHeight);

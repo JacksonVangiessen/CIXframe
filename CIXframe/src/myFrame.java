@@ -17,12 +17,13 @@ public class myFrame extends JFrame{
 	public static void main(String[] args) {
 		// Set Frame Size
 		Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
-		if (!(screensize.height < 1080 || screensize.width < 1920)) {
+		if (screensize.height >= 1080 && screensize.width >= 1920) {
 			screensize.height /= 2;
 			screensize.width /= 2;
-		}else {
-			screensize.height -= 50;
-			screensize.width -= 50;
+		}else if(screensize.height >= 540 && screensize.width >= 960){
+			screensize = new Dimension(960, 540);
+		} else {
+			System.exit(1);
 		}
 		new myFrame(screensize);
 	}
@@ -30,10 +31,8 @@ public class myFrame extends JFrame{
 	protected myFrame(Dimension d) {
 		// Load Frame
 		super.setUndecorated(true);
-		super.setSize(d);
 		super.setResizable(false);
-		super.setMinimumSize(new Dimension(640, 360));
-		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		super.setSize(d);
 		super.setBackground(new Color(0,0,0,0));
 
 		// Fade in Frame

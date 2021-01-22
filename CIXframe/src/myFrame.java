@@ -40,6 +40,7 @@ public class myFrame extends JFrame{
 		
 		// Load GUI
 		myPanel panel = new myPanel(d);
+		panel.frameControls.setTitle("New Title");
 		
 		// Drag 'M' to move Frame
 		panel.frameControls.addMouseListener(new MouseAdapter(){

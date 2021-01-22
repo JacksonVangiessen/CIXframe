@@ -19,7 +19,7 @@ public class myPanel extends JPanel{
 	protected JButton bt_move, bt_fullscreen, bt_exit, bt_iconify;
 	protected Color bg_color;
 	
-    protected String title = "New Frame";
+    protected String title;
     protected int corners = 30,
     		margin = 5,
     		thickness = 2,

@@ -13,6 +13,7 @@ public class myFrameControls extends JPanel{
 	
 	protected Dimension screensize;
 	protected JButton bt_exit, bt_iconify, bt_color;
+	protected JLabel lbl_title;
 	protected int frameControlsHeight;
 	protected String title;
 	
@@ -33,7 +34,7 @@ public class myFrameControls extends JPanel{
 		UIManager.put("Button.select", new Color(0,0,0,0));
 		
 		// Window Title
-		JLabel lbl_title = new JLabel(title);
+		lbl_title = new JLabel(title);
 		lbl_title.setPreferredSize(new Dimension((screensize.width-200)/2, 30));
 		lbl_title.setBackground(new Color(0,0,0,0));
 		lbl_title.setForeground(Color.WHITE);
@@ -90,6 +91,7 @@ public class myFrameControls extends JPanel{
 	
 	public void setTitle(String s) {
 		title = s;
+		lbl_title.setText(title);
 	}
 
 }

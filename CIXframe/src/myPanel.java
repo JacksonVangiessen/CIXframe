@@ -26,7 +26,7 @@ public class myPanel extends JPanel{
     		frameControlsHeight = 35;
 	    
     protected int transparency = 180;
-    protected Color greyT = new Color(40,40,40,transparency),
+    protected Color greyT = new Color(50,50,50,transparency),
     		redT = new Color(80,40,40,transparency),
     		blueT= new Color(40,40,80,transparency),
     		purpleT = new Color(80,40,80,transparency);

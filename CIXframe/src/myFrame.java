@@ -25,7 +25,7 @@ public class myFrame extends JFrame{
 		} else {
 			System.exit(1);
 		}
-		new myFrame(screensize);
+		new myFrame(new Dimension(screensize.width, screensize.height-20));
 	}
 	
 	protected myFrame(Dimension d) {
